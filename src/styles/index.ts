@@ -1,15 +1,9 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  background: ${props => props.theme.colors.background};
-  min-height: 100vh;
-  padding: 50px;
-`;
-
 export const Content = styled.div`
-  background-color: ${props => props.theme.colors.content};
-  box-shadow: ${props => props.theme.boxShadow};
-  color: ${props => props.theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.content};
+  box-shadow: ${({ theme }) => theme.boxShadow};
+  color: ${({ theme }) => theme.colors.text};
   display: grid;
   gap: 30px;
   grid-template-columns: 1fr 5fr;
