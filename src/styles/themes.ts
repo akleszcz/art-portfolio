@@ -14,11 +14,22 @@ const autumnTheme: DefaultTheme = {
 const springTheme: DefaultTheme = {
   boxShadow: 'rgb(0 0 0 / 35%) 0px 0px 29px 0px',
   colors: {
-    background: 'linear-gradient(#b19f86,#be9882)',
+    background: 'linear-gradient(#cdb496,#be9882)',
     content: '#d9d7ad',
     navBar: '#f7ecc9',
     sideMenu: '#f7ecc9',
     text: '#2f341d',
+  }
+};
+
+const summerTheme: DefaultTheme = {
+  boxShadow: 'rgb(0 0 0 / 21%) 0px 0px 24px',
+  colors: {
+    background: 'linear-gradient(#e3daae, #d0d9b7)',
+    content: '#f3d9a0',
+    navBar: '#ffeeb6',
+    sideMenu: '#ffeeb6',
+    text: '#4b4026',
   }
 };
 
@@ -36,6 +47,6 @@ const winterTheme: DefaultTheme = {
 export const themes = {
   autumn: autumnTheme,
   spring: springTheme,
-  // summer: summerTheme,
+  summer: summerTheme,
   winter: winterTheme,
 };
