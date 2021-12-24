@@ -1,6 +1,6 @@
 import { DefaultTheme } from "styled-components";
 
-export const autumnTheme: DefaultTheme = {
+const autumnTheme: DefaultTheme = {
   boxShadow: 'rgb(41 18 18 / 34%) 0px 0px 29px 0px',
   colors: {
     background: 'linear-gradient(#c4a88f, #ca9487)',
@@ -11,7 +11,7 @@ export const autumnTheme: DefaultTheme = {
   }
 };
 
-export const springTheme: DefaultTheme = {
+const springTheme: DefaultTheme = {
   boxShadow: 'rgb(0 0 0 / 35%) 0px 0px 29px 0px',
   colors: {
     background: 'linear-gradient(#b19f86,#be9882)',
@@ -22,7 +22,7 @@ export const springTheme: DefaultTheme = {
   }
 };
 
-export const winterTheme: DefaultTheme = {
+const winterTheme: DefaultTheme = {
   boxShadow: 'rgb(0 0 0 / 21%) 0px 0px 24px',
   colors: {
     background: 'linear-gradient(#b0b9d0, #8297be)',
@@ -31,4 +31,11 @@ export const winterTheme: DefaultTheme = {
     sideMenu: '#d5e2ee',
     text: '#3c4162',
   }
+};
+
+export const themes = {
+  autumn: autumnTheme,
+  spring: springTheme,
+  // summer: summerTheme,
+  winter: winterTheme,
 };
