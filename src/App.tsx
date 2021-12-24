@@ -1,18 +1,22 @@
 import { FunctionComponent } from 'react';
+import { ThemeProvider } from 'styled-components';
 import Main from './components/Main';
 import NavBar from './components/NavBar';
 import SideMenu from './components/SideMenu';
 import * as Styled from './styles';
+import { autumnTheme } from './styles/themes';
 
 const App: FunctionComponent = () => {
   return (
-    <Styled.Wrapper>
-      <Styled.Content>
-        <NavBar />
-        <SideMenu />
-        <Main />
-      </Styled.Content>
-    </Styled.Wrapper>
+    <ThemeProvider theme={autumnTheme}>
+      <Styled.Wrapper>
+        <Styled.Content>
+          <NavBar />
+          <SideMenu />
+          <Main />
+        </Styled.Content>
+      </Styled.Wrapper>
+    </ThemeProvider>
   );
 };
 
