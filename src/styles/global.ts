@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
+import { tokens } from './tokens';
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize}
@@ -11,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
       background: ${({ theme }) =>theme.colors.background};
       min-height: 100vh;
-      padding: 50px;
+      padding: ${tokens.spacing.large};
     }
 
     html {

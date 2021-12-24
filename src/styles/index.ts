@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { tokens } from "./tokens";
 
 export const Content = styled.div`
   background-color: ${({ theme }) => theme.colors.content};
@@ -11,7 +12,7 @@ export const Content = styled.div`
     "navbar navbar"
     "sidemenu main";
   grid-template-rows: 50px 1fr;
-  min-height: 100vh;
+  min-height: calc(100vh - 2 * ${tokens.spacing.large});
   padding: 30px;
 
   & > * {
