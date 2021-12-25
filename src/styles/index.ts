@@ -11,7 +11,7 @@ export const Content = styled.div`
   grid-template-areas:
     "navbar navbar"
     "sidemenu main";
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: auto 1fr;
   min-height: calc(100vh - 2 * ${tokens.spacing.large});
   padding: 30px;
 
