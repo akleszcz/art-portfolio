@@ -8,12 +8,10 @@ import { themes } from './styles/themes';
 describe('App', () => {
   test('renders with default theme', () => {
     render(<App />);
-    const navBar = screen.getByLabelText('Primary navigation');
-    const sideMenu = screen.getByLabelText('Secondary navigation');
+    const content = screen.getByTestId('content');
     const defaultColors = themes[DEFAULT_THEME_NAME].colors;
 
-    expect(navBar).toHaveStyle(`background-color: ${defaultColors.navBar};`);
-    expect(sideMenu).toHaveStyle(`background-color: ${defaultColors.sideMenu};`);
+    expect(content).toHaveStyle(`color: ${defaultColors.text};`);
   });
 
   test('changes styles based on the selected theme', async () => {
@@ -22,13 +20,11 @@ describe('App', () => {
         <App />
       </UiContextProvider>);
     const themeSelect = screen.getByLabelText('Theme select');
-    const navBar = screen.getByLabelText('Primary navigation');
-    const sideMenu = screen.getByLabelText('Secondary navigation');
+    const content = screen.getByTestId('content');
     const winterColors = themes.winter.colors;
 
     await selectEvent.select(themeSelect, 'winter');
 
-    expect(navBar).toHaveStyle(`background-color: ${winterColors.navBar};`);
-    expect(sideMenu).toHaveStyle(`background-color: ${winterColors.sideMenu};`);
+    expect(content).toHaveStyle(`color: ${winterColors.text};`);
   });
 });

@@ -1,4 +1,5 @@
 const spacing = {
+  small: '1rem',
   large: '4rem',
 };
 

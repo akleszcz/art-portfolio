@@ -15,7 +15,7 @@ const App: FunctionComponent = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Styled.Content>
+      <Styled.Content data-testid="content">
         <NavBar />
         <SideMenu />
         <Main />
