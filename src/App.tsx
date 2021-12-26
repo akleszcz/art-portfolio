@@ -6,9 +6,12 @@ import SideMenu from './components/SideMenu';
 import { UiContext } from './context/ui-context';
 import * as Styled from './styles';
 import { GlobalStyle } from './styles/global';
+import { themes } from './styles/themes';
 
 const App: FunctionComponent = () => {
-  const { theme } = useContext(UiContext);
+  const { themeName } = useContext(UiContext);
+  const theme = themes[themeName];
+  
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

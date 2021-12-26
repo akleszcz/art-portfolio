@@ -1,6 +1,5 @@
-import styled from "styled-components";
 import ReactSelect from "react-select";
-import { OptionType } from "../../types";
+import styled from "styled-components";
 
 export const Nav = styled.nav`
   align-items: center;
@@ -11,8 +10,7 @@ export const Nav = styled.nav`
   justify-content: space-between;
 `;
 
-export const Select = styled(ReactSelect)<OptionType>`
-  margin-left: auto;
+export const Select = styled(ReactSelect)`
   text-transform: capitalize;
 
   & > div {
@@ -20,3 +18,9 @@ export const Select = styled(ReactSelect)<OptionType>`
     border-style: none;
   }
 ` as typeof ReactSelect;
+
+export const SelectContainer = styled.span`
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+`;
