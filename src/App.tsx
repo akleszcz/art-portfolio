@@ -8,7 +8,7 @@ import * as Styled from './styles';
 import { GlobalStyle } from './styles/global';
 
 const App: FunctionComponent = () => {
-  const {theme} = useContext(UiContext);
+  const { theme } = useContext(UiContext);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

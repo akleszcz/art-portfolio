@@ -6,11 +6,11 @@ import { ThemeName } from "../../styles/types";
 import { OptionType } from "../../types";
 import * as Styled from "./styles";
 
-const themeOptions = Object.keys(themes).map((key) => ({value: key, label: key})) as OptionType[];
+const themeOptions = Object.keys(themes).map((key) => ({ value: key, label: key })) as OptionType[];
 
 const NavBar: FunctionComponent = () => {
   const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
-  const {setTheme} = useContext(UiContext);
+  const { setTheme } = useContext(UiContext);
   const handleThemeChange = (newValue: SingleValue<OptionType>): void => {
     setSelectedOption(newValue as OptionType);
     setTheme(themes[newValue?.value as ThemeName]);

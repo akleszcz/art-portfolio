@@ -56,6 +56,10 @@
       "indent": [
         "error",
         2
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
       ]
     }
   },
