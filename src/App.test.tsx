@@ -1,8 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from './utils/tests';
 import selectEvent from 'react-select-event';
 import App from './App';
 import { CONTENT_TEST_ID } from './consts';
-import { UiContextProvider } from './context/ui-context';
 import { DEFAULT_THEME_NAME } from './styles/consts';
 import { themes } from './styles/themes';
 
@@ -16,10 +15,7 @@ describe('App', () => {
   });
 
   test('changes styles based on the selected theme', async () => {
-    render(
-      <UiContextProvider>
-        <App />
-      </UiContextProvider>);
+    render(<App />);
     const themeSelect = screen.getByLabelText('Theme select');
     const content = screen.getByTestId(CONTENT_TEST_ID);
     const winterColors = themes.winter.colors;
