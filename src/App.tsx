@@ -1,27 +1,19 @@
-import { FunctionComponent, useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
-import Main from './components/Main';
-import NavBar from './components/NavBar';
-import SideMenu from './components/SideMenu';
-import { CONTENT_TEST_ID } from './consts';
-import { UiContext } from './context/ui-context';
-import * as Styled from './styles';
-import { GlobalStyle } from './styles/global';
-import { themes } from './styles/themes';
+import { FunctionComponent } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Portfolio from './pages/Portfolio';
 
 const App: FunctionComponent = () => {
-  const { themeName } = useContext(UiContext);
-  const theme = themes[themeName];
-  
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Styled.Content data-testid={CONTENT_TEST_ID}>
-        <NavBar />
-        <SideMenu />
-        <Main />
-      </Styled.Content>
-    </ThemeProvider>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Portfolio/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+      </Route>
+    </Routes>
   );
 };
 

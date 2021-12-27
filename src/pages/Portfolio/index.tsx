@@ -1,10 +1,9 @@
 import { FunctionComponent } from "react";
-import * as Styled from './styles';
 
 const integers = Array(30).fill(0).map((_,index)=>index);
 
-const Main: FunctionComponent = () => {
-  return <Styled.Main>
+const Portfolio: FunctionComponent = () => {
+  return <>
     {integers.map(integer => <img
       src={`https://picsum.photos/200?random=${integer}`}
       key={integer}
@@ -12,7 +11,7 @@ const Main: FunctionComponent = () => {
       width="200"
       alt={`Placeholder ${integer}`}
     /> )}
-  </Styled.Main>;
+  </>;
 };
 
-export default Main;
+export default Portfolio;
