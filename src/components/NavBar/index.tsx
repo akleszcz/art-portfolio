@@ -1,12 +1,13 @@
 import { FunctionComponent } from "react";
+import { NavLink } from "react-router-dom";
 import * as Styled from "./styles";
 import ThemeSelect from "./ThemeSelect";
 
 const NavBar: FunctionComponent = () => {
   return <Styled.Nav aria-label="Primary navigation">
-    <span>Portfolio</span>
-    <span>About</span>
-    <span>Contact</span>
+    <NavLink to="/">Portfolio</NavLink>
+    <NavLink to="/about">About</NavLink>
+    <NavLink to="/Contact">Contact</NavLink>
     <ThemeSelect />
   </Styled.Nav>;
 };
