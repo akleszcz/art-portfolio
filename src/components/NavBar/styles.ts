@@ -27,6 +27,7 @@ export const Select = styled(ReactSelect)`
 
   & > div {
     border-style: none;
+    box-shadow: none;
   }
 ` as typeof ReactSelect;
 
