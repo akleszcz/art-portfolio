@@ -13,6 +13,7 @@ export const Nav = styled.nav`
 
 export const Select = styled(ReactSelect)`
   text-transform: capitalize;
+  width: 8rem;
 
   & > div {
     border-style: none;
