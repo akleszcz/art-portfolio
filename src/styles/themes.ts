@@ -3,28 +3,32 @@ import { DefaultTheme } from "styled-components";
 const autumnTheme: DefaultTheme = {
   colors: {
     background: 'linear-gradient(#cfc6c6, #c5b6b6);',
-    text: '#502004',
+    secondaryText: '#a17f7f',
+    text: '#3b0e03',
   }
 };
 
 const springTheme: DefaultTheme = {
   colors: {
     background: 'linear-gradient(#cacfc6, #b6c5b6)',
-    text: '#21341d',
+    secondaryText: '#7fa185',
+    text: '#033b27',
   }
 };
 
 const summerTheme: DefaultTheme = {
   colors: {
     background: 'linear-gradient(#dddfca, #edeaca)',
-    text: '#34321d',
+    secondaryText: '#9da17f',
+    text: '#3b3803',
   }
 };
 
 const winterTheme: DefaultTheme = {
   colors: {
     background: 'linear-gradient(#ced6df, #b2becb)',
-    text: '#3c5b62',
+    secondaryText: '#7f92a1',
+    text: '#03233b',
   }
 };
 

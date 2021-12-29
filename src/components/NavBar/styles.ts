@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import ReactSelect from "react-select";
 import styled from "styled-components";
 import { tokens } from "../../styles/tokens";
@@ -9,6 +10,15 @@ export const Nav = styled.nav`
   grid-area: navbar;
   justify-content: space-between;
   padding: ${tokens.spacing.small};
+`;
+
+export const NavigationLink = styled(NavLink)`
+  color: inherit;
+
+  &:not(.active) {
+    color: ${({ theme }) => theme.colors.secondaryText};
+    text-decoration: none;
+  }
 `;
 
 export const Select = styled(ReactSelect)`
