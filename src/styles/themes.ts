@@ -18,7 +18,7 @@ const springTheme: DefaultTheme = {
 
 const summerTheme: DefaultTheme = {
   colors: {
-    background: 'linear-gradient(#dddfca, #edeaca)',
+    background: 'linear-gradient(#edeaca, #dddfca)',
     secondaryText: '#9da17f',
     text: '#3b3803',
   }
