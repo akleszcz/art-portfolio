@@ -18,7 +18,7 @@ const Layout: FunctionComponent = ({ children }) => {
     <Styled.Content data-testid={CONTENT_TEST_ID}>
       <NavBar />
       <Routes>
-        <Route path="/" element={<SideMenu/>}/>
+        <Route path="/portfolio" element={<SideMenu/>}/>
         <Route path="/*" element={null} />
       </Routes>
       <Styled.Main>

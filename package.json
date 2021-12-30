@@ -59,7 +59,10 @@
         "error",
         "always"
       ]
-    }
+    },
+    "ignorePatterns": [
+      "build"
+    ]
   },
   "browserslist": {
     "production": [
