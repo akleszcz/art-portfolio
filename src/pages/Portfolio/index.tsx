@@ -5,7 +5,7 @@ const integers = Array(30).fill(0).map((_,index)=>index);
 const Portfolio: FunctionComponent = () => {
   return <>
     {integers.map(integer => <img
-      src={`https://picsum.photos/200?random=${integer}`}
+      src={`${process.env.PUBLIC_URL}/assets/placeholder.png`}
       key={integer}
       height="200"
       width="200"
