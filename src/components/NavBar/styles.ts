@@ -14,6 +14,8 @@ export const Nav = styled.nav`
 
 export const NavigationLink = styled(NavLink)`
   color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 
   &:not(.active) {
     color: ${({ theme }) => theme.colors.secondaryText};

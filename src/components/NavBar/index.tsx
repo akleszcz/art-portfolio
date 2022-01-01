@@ -4,7 +4,7 @@ import ThemeSelect from "./ThemeSelect";
 
 const NavBar: FunctionComponent = () => {
   return <Styled.Nav aria-label="Primary navigation">
-    <Styled.NavigationLink to="/">Portfolio</Styled.NavigationLink>
+    <Styled.NavigationLink to="/portfolio">Portfolio</Styled.NavigationLink>
     <Styled.NavigationLink to="/about">About</Styled.NavigationLink>
     <Styled.NavigationLink to="/contact">Contact</Styled.NavigationLink>
     <ThemeSelect />
