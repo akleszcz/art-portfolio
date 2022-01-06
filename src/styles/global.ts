@@ -18,4 +18,9 @@ export const GlobalStyle = createGlobalStyle`
     html {
       font-family: sans-serif;
     }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 `;
