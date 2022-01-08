@@ -14,22 +14,23 @@ const Pagination: FunctionComponent<PaginationProps> = ({ currentPage, handlePag
   const previousPage = (currentPage - 1).toString();
   const nextPage = (currentPage + 1).toString();
 
-  return <Styled.Nav>
-    <Styled.NavList>
-      <Styled.Link
-        to={`${pathname}?${createSearchParams({ page: previousPage })}`}
-        className={currentPage === 1 ? 'disabled' : ''}><MdNavigateBefore size={42}/>
-      </Styled.Link>
-      <ReactSelect
-        menuPlacement="auto" 
-        value={createSelectOption(currentPage.toString())}
-        onChange={handlePageChange}
-        options={options}></ReactSelect>
-      <Styled.Link
-        to={`${pathname}?${createSearchParams({ page: nextPage })}`}
-        className={currentPage === numberOfPages ? 'disabled' : ''}><MdNavigateNext size={42}/>
-      </Styled.Link>
-    </Styled.NavList>
+  return <Styled.Nav aria-label="Pagination">
+    <Styled.Link
+      aria-label="Previous page"
+      to={`${pathname}?${createSearchParams({ page: previousPage })}`}
+      className={currentPage === 1 ? 'disabled' : ''}><MdNavigateBefore size={42}/>
+    </Styled.Link>
+    <ReactSelect
+      aria-label="Page select"
+      menuPlacement="auto"
+      value={createSelectOption(currentPage.toString())}
+      onChange={handlePageChange}
+      options={options}></ReactSelect>
+    <Styled.Link
+      aria-label="Next page"
+      to={`${pathname}?${createSearchParams({ page: nextPage })}`}
+      className={currentPage === numberOfPages ? 'disabled' : ''}><MdNavigateNext size={42}/>
+    </Styled.Link>
   </Styled.Nav>;
 };
 

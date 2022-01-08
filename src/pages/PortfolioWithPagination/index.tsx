@@ -1,8 +1,9 @@
 import Portfolio from "../../components/Portfolio";
 import withPagination from "../../hocs/withPagination";
+import { FetchData } from "../../hocs/withPagination/types";
 import { LIMIT } from "./consts";
 
-const fetchData = async ({ limit, offset }: {limit: number, offset: number}): Promise<{ totalCount: number, data: string[] }> => {
+const fetchData: FetchData = async ({ limit, offset }) => {
   const totalCount = 28; // normally it would be returned by a server
   const pageNumber = Math.ceil(offset / limit);
   const quotient = Math.floor(totalCount / limit);
@@ -13,6 +14,5 @@ const fetchData = async ({ limit, offset }: {limit: number, offset: number}): Pr
   return Promise.resolve({ data: imageUrls, totalCount });
 };
 
-const PortfolioWithPagination = withPagination(Portfolio, { fetchData, limit: LIMIT });
+export default withPagination(Portfolio, { fetchData, limit: LIMIT });
 
-export default PortfolioWithPagination;

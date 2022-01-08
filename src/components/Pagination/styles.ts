@@ -3,14 +3,11 @@ import styled from "styled-components";
 import { tokens } from "../../styles/tokens";
 
 export const Nav = styled.nav`
-  width: 100%;
-`;
-
-export const NavList = styled.ul`
   align-items: center;
   display: flex;
   gap: ${tokens.spacing.small};
   justify-content: center;
+  width: 100%;
 `;
 
 export const Link = styled(NavLink)`
