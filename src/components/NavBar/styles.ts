@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   padding: ${tokens.spacing.small};
 `;
 
-export const NavigationLink = styled(NavLink)`
+export const Link = styled(NavLink)`
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 5px;

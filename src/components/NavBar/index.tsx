@@ -4,9 +4,9 @@ import ThemeSelect from "./ThemeSelect";
 
 const NavBar: FunctionComponent = () => {
   return <Styled.Nav aria-label="Primary navigation">
-    <Styled.NavigationLink to="/portfolio">Portfolio</Styled.NavigationLink>
-    <Styled.NavigationLink to="/about">About</Styled.NavigationLink>
-    <Styled.NavigationLink to="/contact">Contact</Styled.NavigationLink>
+    <Styled.Link to="/portfolio">Portfolio</Styled.Link>
+    <Styled.Link to="/about">About</Styled.Link>
+    <Styled.Link to="/contact">Contact</Styled.Link>
     <ThemeSelect />
   </Styled.Nav>;
 };
