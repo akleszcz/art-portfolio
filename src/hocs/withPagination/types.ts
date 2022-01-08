@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-type LoadData = ({ limit, offset }: {limit: number, offset: number}) => string[];
-type WithPaginationParams = { loadData: LoadData, limit: number };
+type FetchData = ({ limit, offset }: {limit: number, offset: number}) => Promise<{ totalCount: number, data: string[] }>;
+type WithPaginationParams = { fetchData: FetchData, limit: number };
 
 export type PaginatedComponent = FunctionComponent<{ data: string[] }>;
-export type WithPagination = (WrappedComponent: PaginatedComponent, { loadData, limit }: WithPaginationParams ) => FunctionComponent;
+export type WithPagination = (WrappedComponent: PaginatedComponent, { fetchData, limit }: WithPaginationParams ) => FunctionComponent;

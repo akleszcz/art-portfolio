@@ -13,7 +13,7 @@ export const createPageNumber = (pageNumberString: string | null, numberOfPages:
   const pageNumber = Number.parseInt(pageNumberString, 10);
   if (Number.isNaN(pageNumber) || pageNumber < 1 || pageNumber > numberOfPages) {
     throw new Error(`Invalid page number: ${pageNumberString}`);
-
   }
+
   return pageNumber;
 };
