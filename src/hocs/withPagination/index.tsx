@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SingleValue } from "react-select";
-import Pagination from "../../components/Pagination";
+import * as Styled from "./styles";
 import { OptionType } from "../../types";
 import { createPageNumber } from "../../utils";
 import { WithPagination } from "./types";
@@ -40,7 +40,11 @@ const withPagination: WithPagination = (WrappedComponent, { fetchData, limit }) 
     }
     return <>
       <WrappedComponent data={data}/>
-      <Pagination currentPage={currentPage} handlePageChange={handlePageChange} numberOfPages={numberOfPages} />
+      <Styled.PaginationWithMargin
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+        numberOfPages={numberOfPages}
+      />
     </>;
   };
   return WithPagination;
