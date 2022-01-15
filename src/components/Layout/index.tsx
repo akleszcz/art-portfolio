@@ -21,9 +21,9 @@ const Layout: FunctionComponent = ({ children }) => {
         <Route path="/portfolio/*" element={<SideMenu/>}/>
         <Route path="/*" element={null} />
       </Routes>
-      <Styled.Main>
+      <main>
         {children}
-      </Styled.Main>
+      </main>
     </Styled.Content>
   </ThemeProvider>;
 };

@@ -6,7 +6,7 @@ import { createSelectOption } from "../../utils";
 import * as Styled from './styles';
 import { PaginationProps } from "./types";
 
-const Pagination: FunctionComponent<PaginationProps> = ({ currentPage, handlePageChange, numberOfPages }) => {
+const Pagination: FunctionComponent<PaginationProps> = ({ className, currentPage, handlePageChange, numberOfPages }) => {
   const { pathname } = useLocation();
 
   const pageNumbers = Array(numberOfPages).fill(0).map((_,index)=>(index + 1).toString());
@@ -14,7 +14,7 @@ const Pagination: FunctionComponent<PaginationProps> = ({ currentPage, handlePag
   const previousPage = (currentPage - 1).toString();
   const nextPage = (currentPage + 1).toString();
 
-  return <Styled.Nav aria-label="Pagination">
+  return <Styled.Nav aria-label="Pagination" className={className}>
     <Styled.Link
       aria-label="Previous page"
       to={`${pathname}?${createSearchParams({ page: previousPage })}`}

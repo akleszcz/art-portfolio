@@ -16,9 +16,3 @@ export const Content = styled.div`
   padding: 30px;
 `;
 
-export const Main = styled.main`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${tokens.spacing.small};
-  grid-area: main;
-`;

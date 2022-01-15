@@ -5,6 +5,7 @@ const fontSize = {
 
 const spacing = {
   small: '1rem',
+  medium: '2rem',
   large: '4rem',
 };
 
