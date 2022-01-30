@@ -11,18 +11,18 @@ describe('NavBar component', () => {
     const ContactLink = screen.getByRole('link', { name: 'Contact' });
     const underlineStyle = 'text-decoration: underline;';
     const noUnderlineStyle = 'text-decoration: none;';
-  
+
     expect(HomeLink).toHaveStyle(underlineStyle);
     expect(PortfolioLink).toHaveStyle(noUnderlineStyle);
     expect(AboutLink).toHaveStyle(noUnderlineStyle);
     expect(ContactLink).toHaveStyle(noUnderlineStyle);
-  
+
     userEvent.click(AboutLink);
-  
+
     expect(HomeLink).toHaveStyle(noUnderlineStyle);
     expect(PortfolioLink).toHaveStyle(noUnderlineStyle);
     expect(AboutLink).toHaveStyle(underlineStyle);
     expect(ContactLink).toHaveStyle(noUnderlineStyle);
   });
-  
+
 });

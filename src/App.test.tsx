@@ -7,7 +7,14 @@ describe('App component', () => {
     render(<App />);
     userEvent.click(screen.getByRole('link', { name: 'About' }));
     const main = screen.getByRole('main');
-  
+
     expect(within(main).getByText('About')).toBeInTheDocument();
+  });
+
+  test(`displays "Page not found" info for unknown routes`, async () => {
+    window.history.pushState({}, '', '/unknown-url');
+    render(<App />);
+
+    expect(await screen.findByText('Page not found')).toBeInTheDocument();
   });
 });
