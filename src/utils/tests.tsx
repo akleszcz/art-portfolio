@@ -1,7 +1,7 @@
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { FunctionComponent, ReactElement } from 'react';
 import { UiContextProvider } from '../context/ui-context';
-import { MemoryRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { DEFAULT_THEME_NAME } from '../styles/consts';
 import { themes } from '../styles/themes';
 import { ThemeProvider } from 'styled-components';
@@ -10,9 +10,9 @@ import { ThemeProvider } from 'styled-components';
 const AllTheProviders: FunctionComponent = ({ children }) => {
   return (
     <UiContextProvider>
-      <MemoryRouter>
+      <BrowserRouter>
         {children}
-      </MemoryRouter>
+      </BrowserRouter>
     </UiContextProvider>
   );
 };
