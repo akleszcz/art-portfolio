@@ -1,3 +1,8 @@
+const breakpoint = {
+  small: '480px',
+  medium: '680px'
+};
+
 const fontSize = {
   small: '0.75rem',
   large: '1.25rem',
@@ -10,6 +15,7 @@ const spacing = {
 };
 
 export const tokens = {
+  breakpoint,
   fontSize,
   spacing,
 };

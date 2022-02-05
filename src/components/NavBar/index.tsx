@@ -1,15 +1,28 @@
 import { FunctionComponent } from "react";
 import * as Styled from "./styles";
 import ThemeSelect from "./ThemeSelect";
+import { MdMenu } from "react-icons/md";
+import { NavLinks } from "./NavLinks";
+import { useMediaQuery } from 'react-responsive';
+import { tokens } from "../../styles/tokens";
 
 const NavBar: FunctionComponent = () => {
-  return <Styled.Nav aria-label="Primary navigation">
-    <Styled.Link to="/">Home</Styled.Link>
-    <Styled.Link to="/portfolio">Portfolio</Styled.Link>
-    <Styled.Link to="/about">About</Styled.Link>
-    <Styled.Link to="/contact">Contact</Styled.Link>
-    <ThemeSelect />
-  </Styled.Nav>;
+  const isLargerScreen = useMediaQuery({
+    query: `(min-width: ${tokens.breakpoint.medium})`
+  });
+
+  const navigationElement = isLargerScreen ?
+    <NavLinks/> :
+    <Styled.MenuButton aria-label="Navigation bar toggle">
+      <MdMenu />
+    </Styled.MenuButton>;
+
+  return (
+    <Styled.Nav aria-label="Primary navigation">
+      { navigationElement }
+      <ThemeSelect />
+    </Styled.Nav>
+  );
 };
 
 export default NavBar;

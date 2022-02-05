@@ -23,6 +23,11 @@ export const Link = styled(NavLink)`
   }
 `;
 
+export const MenuButton = styled.button`
+  background-color: transparent;
+  border: none;
+`;
+
 export const Select = styled(ReactSelect)`
   text-transform: capitalize;
   width: 8rem;
