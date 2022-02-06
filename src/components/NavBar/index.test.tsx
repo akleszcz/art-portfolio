@@ -36,11 +36,11 @@ describe('NavBar component', () => {
 
 
   describe('on small screens', () => {
-    test('displays menu button', async () => {
+    test('displays menu button', () => {
       (useMediaQuery as jest.Mock<boolean, []>).mockImplementation(() => false);
       render(<NavBar />);
 
-      expect(await screen.findByLabelText('Navigation bar toggle')).toBeInTheDocument();
+      expect(screen.getByLabelText('Navigation bar toggle')).toBeInTheDocument();
 
     });
   });

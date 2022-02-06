@@ -10,9 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      background: ${({ theme }) =>theme.colors.background};
+      background: none;
       min-height: 100vh;
-      padding: ${tokens.spacing.large};
+      padding: 0;
     }
 
     html {
@@ -22,5 +22,12 @@ export const GlobalStyle = createGlobalStyle`
     ul {
       list-style-type: none;
       padding: 0;
+    }
+
+    @media (min-width: ${tokens.breakpoint.medium}) {
+      body {
+        background: ${({ theme }) =>theme.colors.background};
+        padding: ${tokens.spacing.xLarge};
+      }
     }
 `;

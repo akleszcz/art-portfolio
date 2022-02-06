@@ -1,6 +1,7 @@
 const breakpoint = {
   small: '480px',
-  medium: '680px'
+  medium: '680px',
+  large: '992px',
 };
 
 const fontSize = {
@@ -11,7 +12,8 @@ const fontSize = {
 const spacing = {
   small: '1rem',
   medium: '2rem',
-  large: '4rem',
+  large: '3rem',
+  xLarge: '4rem',
 };
 
 export const tokens = {
