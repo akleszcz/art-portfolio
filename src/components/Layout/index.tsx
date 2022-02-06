@@ -1,4 +1,4 @@
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent, useContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { CONTENT_TEST_ID } from "../../consts";
@@ -6,17 +6,24 @@ import { UiContext } from "../../context/ui-context";
 import { GlobalStyle } from "../../styles/global";
 import { themes } from "../../styles/themes";
 import NavBar from "../NavBar";
+import SideDrawer from "../SideDrawer";
 import SideMenu from "../SideMenu";
 import * as Styled from './styles';
 
 const Layout: FunctionComponent = ({ children }) => {
   const { themeName } = useContext(UiContext);
   const theme = themes[themeName];
+  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
+
+  const toggleSideDrawerOpen = (): void => {
+    setIsSideDrawerOpen(prevIsSideDrawerOpen => !prevIsSideDrawerOpen);
+  };
 
   return <ThemeProvider theme={theme}>
     <GlobalStyle />
+    <SideDrawer isOpen={isSideDrawerOpen} toggleIsOpen={toggleSideDrawerOpen}/>
     <Styled.Content data-testid={CONTENT_TEST_ID}>
-      <NavBar />
+      <NavBar toggleSideDrawerOpen={toggleSideDrawerOpen}/>
       <Routes>
         <Route path="/portfolio/*" element={<SideMenu/>}/>
         <Route path="/*" element={null} />

@@ -12,8 +12,9 @@ describe('App component', () => {
   describe('on big screens', () => {
     test(`navigates to the 'About' section when 'About' is clicked in the navigation bar`, () => {
       render(<App />);
+      const primaryNav = screen.getByLabelText('Primary navigation');
 
-      userEvent.click(screen.getByRole('link', { name: 'About', hidden: true }));
+      userEvent.click(within(primaryNav).getByRole('link', { name: 'About', hidden: true }));
       const main = screen.getByRole('main');
 
       expect(within(main).getByText('About')).toBeInTheDocument();
