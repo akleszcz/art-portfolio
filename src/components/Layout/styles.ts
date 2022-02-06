@@ -6,13 +6,21 @@ export const Content = styled.div`
   background-color: #fff;
   color: ${({ theme }) => theme.colors.text};
   display: grid;
-  gap: 30px;
-  grid-template-columns: auto 1fr;
+  gap: ${tokens.spacing.small};
   grid-template-areas:
+    "navbar"
+    "sidemenu"
+    "main";
+  grid-template-rows: auto 1fr;
+  min-height: calc(100vh - 2 * ${tokens.spacing.xLarge});
+  padding: ${tokens.spacing.large};
+
+  @media (min-width: ${tokens.breakpoint.medium}) {
+    gap: ${tokens.spacing.large};
+    grid-template-areas:
     "navbar navbar"
     "sidemenu main";
-  grid-template-rows: auto 1fr;
-  min-height: calc(100vh - 2 * ${tokens.spacing.large});
-  padding: 30px;
+    grid-template-columns: auto 1fr;
+  }
 `;
 
