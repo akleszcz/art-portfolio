@@ -1,5 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import { useMediaQuery } from "react-responsive";
+import { useMediaQueryMock } from "../../types";
 import { render, screen, wrapInTheme } from "../../utils/tests";
 import NavBar from './index';
 
@@ -37,7 +38,7 @@ describe('NavBar component', () => {
 
   describe('on small screens', () => {
     test('displays menu button', () => {
-      (useMediaQuery as jest.Mock<boolean, []>).mockImplementation(() => false);
+      (useMediaQuery as useMediaQueryMock).mockImplementation(() => false);
       render(<NavBar />);
 
       expect(screen.getByLabelText('Navigation bar toggle')).toBeInTheDocument();
