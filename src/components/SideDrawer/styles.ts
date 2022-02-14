@@ -10,6 +10,7 @@ export const Nav = styled.nav`
   padding: ${tokens.spacing.large};
   position: fixed;
   transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
   width: 40%;
 
   &.open {
