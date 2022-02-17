@@ -15,6 +15,12 @@ jest.mock('react-responsive', () => {
   };
 });
 
+const sideDrawerOpenStyle = 'transform: translateX(0)';
+const sideDrawerClosedStyle = 'transform: translateX(-100%)';
+const backdropTestId = 'backdrop';
+const menuButtonLabel = 'Navigation bar toggle';
+const sideDrawerLabel = 'Sidebar navigation';
+
 describe('Layout component', () => {
   test('renders with default theme', async () => {
     render(<Layout/>);
@@ -38,20 +44,32 @@ describe('Layout component', () => {
 
     test('shows SideDrawer when menu button is clicked', () => {
       render(<Layout />);
-      const sideDrawer = screen.getByLabelText('Sidebar navigation');
+      const sideDrawer = screen.getByLabelText(sideDrawerLabel);
 
-      expect(sideDrawer).toHaveStyle('transform: translateX(-100%)');
+      expect(sideDrawer).toHaveStyle(sideDrawerClosedStyle);
 
-      userEvent.click(screen.getByLabelText('Navigation bar toggle'));
-      expect(sideDrawer).toHaveStyle('transform: translateX(0)');
+      userEvent.click(screen.getByLabelText(menuButtonLabel));
+      expect(sideDrawer).toHaveStyle(sideDrawerOpenStyle);
     });
 
     test('shows Backdrop when menu button is clicked', () => {
       render(<Layout />);
-      expect(screen.queryByTestId('backdrop')).not.toBeInTheDocument();
+      expect(screen.queryByTestId(backdropTestId)).not.toBeInTheDocument();
 
-      userEvent.click(screen.getByLabelText('Navigation bar toggle'));
-      expect(screen.getByTestId('backdrop')).toBeInTheDocument();
+      userEvent.click(screen.getByLabelText(menuButtonLabel));
+      expect(screen.getByTestId(backdropTestId)).toBeInTheDocument();
+    });
+
+    test('hides SideDrawer when Backdrop is clicked', () => {
+      render(<Layout />);
+      const sideDrawer = screen.getByLabelText(sideDrawerLabel);
+      expect(sideDrawer).toHaveStyle(sideDrawerClosedStyle);
+
+      userEvent.click(screen.getByLabelText(menuButtonLabel));
+      expect(sideDrawer).toHaveStyle(sideDrawerOpenStyle);
+
+      userEvent.click(screen.getByTestId(backdropTestId));
+      expect(sideDrawer).toHaveStyle(sideDrawerClosedStyle);
     });
   });
 });
