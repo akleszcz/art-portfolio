@@ -7,8 +7,10 @@ export const Nav = styled.nav`
   flex-direction: column;
   height: 100%;
   gap: ${tokens.spacing.small};
+  left: 0;
   padding: ${tokens.spacing.large};
   position: fixed;
+  top: 0;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
   width: 40%;

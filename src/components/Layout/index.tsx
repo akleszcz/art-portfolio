@@ -5,6 +5,7 @@ import { CONTENT_TEST_ID } from "../../consts";
 import { UiContext } from "../../context/ui-context";
 import { GlobalStyle } from "../../styles/global";
 import { themes } from "../../styles/themes";
+import Backdrop from "../Backdrop";
 import NavBar from "../NavBar";
 import SideDrawer from "../SideDrawer";
 import SideMenu from "../SideMenu";
@@ -21,7 +22,6 @@ const Layout: FunctionComponent = ({ children }) => {
 
   return <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <SideDrawer isOpen={isSideDrawerOpen} toggleIsOpen={toggleSideDrawerOpen}/>
     <Styled.Content data-testid={CONTENT_TEST_ID}>
       <NavBar toggleSideDrawerOpen={toggleSideDrawerOpen}/>
       <Routes>
@@ -32,6 +32,8 @@ const Layout: FunctionComponent = ({ children }) => {
         {children}
       </main>
     </Styled.Content>
+    <Backdrop isVisible={isSideDrawerOpen}/>
+    <SideDrawer isOpen={isSideDrawerOpen} toggleIsOpen={toggleSideDrawerOpen}/>
   </ThemeProvider>;
 };
 
