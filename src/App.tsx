@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import Layout from './components/Layout';
 import About from './pages/About';
@@ -13,8 +13,7 @@ const App: FunctionComponent = () => {
     <Layout>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/portfolio" element={<Navigate replace to="/portfolio/portrait" />} />
-        <Route path="/portfolio/:category" element={
+        <Route path="/portfolio" element={
           <ErrorBoundary>
             <PortfolioWithPagination/>
           </ErrorBoundary>

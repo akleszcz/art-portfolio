@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
-import { tokens } from './tokens';
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize}
@@ -22,12 +21,5 @@ export const GlobalStyle = createGlobalStyle`
     ul {
       list-style-type: none;
       padding: 0;
-    }
-
-    @media (min-width: ${tokens.breakpoint.medium}) {
-      body {
-        background: ${({ theme }) =>theme.colors.background};
-        padding: ${tokens.spacing.xLarge};
-      }
     }
 `;

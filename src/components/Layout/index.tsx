@@ -1,6 +1,5 @@
 import { FunctionComponent, useContext, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { CONTENT_TEST_ID } from "../../consts";
 import { UiContext } from "../../context/ui-context";

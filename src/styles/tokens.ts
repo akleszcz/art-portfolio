@@ -13,7 +13,6 @@ const spacing = {
   small: '1rem',
   medium: '2rem',
   large: '3rem',
-  xLarge: '4rem',
 };
 
 export const tokens = {

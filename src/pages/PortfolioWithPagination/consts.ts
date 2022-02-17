@@ -1,2 +1,2 @@
 // Maximum number of images per page
-export const LIMIT = 9;
+export const LIMIT = 18;
