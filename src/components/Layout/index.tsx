@@ -1,6 +1,5 @@
 import { FunctionComponent, useContext, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { CONTENT_TEST_ID } from "../../consts";
 import { UiContext } from "../../context/ui-context";
@@ -10,7 +9,6 @@ import { tokens } from "../../styles/tokens";
 import Backdrop from "../Backdrop";
 import NavBar from "../NavBar";
 import SideDrawer from "../SideDrawer";
-import SideMenu from "../SideMenu";
 import * as Styled from './styles';
 
 const Layout: FunctionComponent = ({ children }) => {
@@ -33,10 +31,6 @@ const Layout: FunctionComponent = ({ children }) => {
         isLargerScreen={isLargerScreen}
         toggleSideDrawerOpen={toggleSideDrawerOpen}
       />
-      <Routes>
-        <Route path="/portfolio/*" element={<SideMenu/>}/>
-        <Route path="/*" element={null} />
-      </Routes>
       <main>
         {children}
       </main>
