@@ -39,7 +39,7 @@ describe('NavBar component', () => {
   describe('on small screens', () => {
     test('displays menu button', () => {
       (useMediaQuery as useMediaQueryMock).mockImplementation(() => false);
-      render(<NavBar />);
+      render(<NavBar isLargerScreen={false}/>);
 
       expect(screen.getByLabelText('Navigation bar toggle')).toBeInTheDocument();
 

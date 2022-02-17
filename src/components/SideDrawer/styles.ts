@@ -7,8 +7,10 @@ export const Nav = styled.nav`
   flex-direction: column;
   height: 100%;
   gap: ${tokens.spacing.small};
+  left: 0;
   padding: ${tokens.spacing.large};
   position: fixed;
+  top: 0;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
   width: 40%;
@@ -16,9 +18,5 @@ export const Nav = styled.nav`
   &.open {
     transform: translateX(0);
     box-shadow: 3px 0px 10px 5px rgb(0 0 0 / 20%);
-  }
-
-  @media (min-width: ${tokens.breakpoint.medium}) {
-    display: none;
   }
 `;
