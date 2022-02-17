@@ -45,5 +45,13 @@ describe('Layout component', () => {
       userEvent.click(screen.getByLabelText('Navigation bar toggle'));
       expect(sideDrawer).toHaveStyle('transform: translateX(0)');
     });
+
+    test('shows Backdrop when menu button is clicked', () => {
+      render(<Layout />);
+      expect(screen.queryByTestId('backdrop')).not.toBeInTheDocument();
+
+      userEvent.click(screen.getByLabelText('Navigation bar toggle'));
+      expect(screen.getByTestId('backdrop')).toBeInTheDocument();
+    });
   });
 });
