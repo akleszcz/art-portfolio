@@ -19,8 +19,4 @@ export const Nav = styled.nav`
     transform: translateX(0);
     box-shadow: 3px 0px 10px 5px rgb(0 0 0 / 20%);
   }
-
-  @media (min-width: ${tokens.breakpoint.medium}) {
-    display: none;
-  }
 `;

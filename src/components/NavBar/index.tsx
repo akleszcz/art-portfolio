@@ -1,17 +1,11 @@
 import { FunctionComponent } from "react";
-import * as Styled from "./styles";
-import ThemeSelect from "./ThemeSelect";
 import { MdMenu } from "react-icons/md";
 import NavLinks from "../NavLinks";
-import { useMediaQuery } from 'react-responsive';
-import { tokens } from "../../styles/tokens";
+import * as Styled from "./styles";
+import ThemeSelect from "./ThemeSelect";
 
-const NavBar: FunctionComponent<{ toggleSideDrawerOpen?: () => void} > =
- ({ toggleSideDrawerOpen }) => {
-   const isLargerScreen = useMediaQuery({
-     query: `(min-width: ${tokens.breakpoint.medium})`
-   });
-
+const NavBar: FunctionComponent<{ isLargerScreen?: boolean, toggleSideDrawerOpen?: () => void} > =
+ ({ isLargerScreen = true, toggleSideDrawerOpen }) => {
    const navigationElement = isLargerScreen ?
      <NavLinks/> :
      <Styled.MenuButton aria-label="Navigation bar toggle" onClick={toggleSideDrawerOpen}>
