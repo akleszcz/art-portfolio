@@ -43,7 +43,10 @@ const Layout: FunctionComponent = ({ children }) => {
     </Styled.Content>
     {isLargerScreen ? null :
       <>
-        <Backdrop isVisible={isSideDrawerOpen}/>
+        <Backdrop
+          isVisible={isSideDrawerOpen}
+          onClick={toggleSideDrawerOpen}
+        />
         <SideDrawer
           isOpen={isSideDrawerOpen}
           toggleIsOpen={toggleSideDrawerOpen}
