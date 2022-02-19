@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import ImageDetails from './pages/ImageDetails';
 import NotFound from './pages/NotFound';
 import PortfolioWithPagination from './pages/PortfolioWithPagination';
 
@@ -18,6 +19,7 @@ const App: FunctionComponent = () => {
             <PortfolioWithPagination/>
           </ErrorBoundary>
         }/>
+        <Route path="/portfolio/:id" element={<ImageDetails/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="*" element={<NotFound/>}></Route>
