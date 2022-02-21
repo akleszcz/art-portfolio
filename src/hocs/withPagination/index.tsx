@@ -1,15 +1,17 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SingleValue } from "react-select";
-import * as Styled from "./styles";
 import { OptionType } from "../../types";
 import { createPageNumber } from "../../utils";
-import { WithPagination } from "./types";
+import * as Styled from "./styles";
+import { PaginatedComponent, WithPaginationParams } from "./types";
 
-const withPagination: WithPagination = (WrappedComponent, { fetchData, limit }) => {
+const withPagination =
+<T extends unknown>(WrappedComponent: PaginatedComponent<T>, { fetchData, limit }: WithPaginationParams<T> )
+: FunctionComponent => {
   const WithPagination: FunctionComponent = () => {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [data, setData] = useState<string[]>([]);
+    const [data, setData] = useState<T[]>([]);
     const [totalCount, setTotalCount] = useState(0);
 
     let numberOfPages = 0;
