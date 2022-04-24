@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      background: none;
+      background: ${({ theme }) =>theme.colors.background};
       min-height: 100vh;
       padding: 0;
     }
