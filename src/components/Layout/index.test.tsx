@@ -32,7 +32,10 @@ describe('Layout component', () => {
   test('changes styles based on the selected theme', async () => {
     render(<Layout />);
     const themeName: ThemeName = 'dark';
-    await selectEvent.select(screen.getByLabelText('Theme select'), themeName);
+    const themeSelect = screen.getByLabelText('Theme select');
+
+    selectEvent.openMenu(themeSelect);
+    await selectEvent.select(themeSelect, themeName);
 
     expect(screen.getByTestId(CONTENT_TEST_ID))
       .toHaveStyle(`color: ${themes[themeName].colors.text};`);
@@ -42,33 +45,36 @@ describe('Layout component', () => {
     beforeAll(() => (useMediaQuery as useMediaQueryMock).mockImplementation(() => false));
     afterAll(() => (useMediaQuery as useMediaQueryMock).mockImplementation(() => true));
 
-    test('shows SideDrawer when menu button is clicked', () => {
+    test('shows SideDrawer when menu button is clicked', async () => {
+      const user = userEvent.setup();
       render(<Layout />);
       const sideDrawer = screen.getByLabelText(sideDrawerLabel);
 
       expect(sideDrawer).toHaveStyle(sideDrawerClosedStyle);
 
-      userEvent.click(screen.getByLabelText(menuButtonLabel));
+      await user.click(screen.getByLabelText(menuButtonLabel));
       expect(sideDrawer).toHaveStyle(sideDrawerOpenStyle);
     });
 
-    test('shows Backdrop when menu button is clicked', () => {
+    test('shows Backdrop when menu button is clicked', async () => {
+      const user = userEvent.setup();
       render(<Layout />);
       expect(screen.queryByTestId(backdropTestId)).not.toBeInTheDocument();
 
-      userEvent.click(screen.getByLabelText(menuButtonLabel));
+      await user.click(screen.getByLabelText(menuButtonLabel));
       expect(screen.getByTestId(backdropTestId)).toBeInTheDocument();
     });
 
-    test('hides SideDrawer when Backdrop is clicked', () => {
+    test('hides SideDrawer when Backdrop is clicked', async () => {
+      const user = userEvent.setup();
       render(<Layout />);
       const sideDrawer = screen.getByLabelText(sideDrawerLabel);
       expect(sideDrawer).toHaveStyle(sideDrawerClosedStyle);
 
-      userEvent.click(screen.getByLabelText(menuButtonLabel));
+      await user.click(screen.getByLabelText(menuButtonLabel));
       expect(sideDrawer).toHaveStyle(sideDrawerOpenStyle);
 
-      userEvent.click(screen.getByTestId(backdropTestId));
+      await user.click(screen.getByTestId(backdropTestId));
       expect(sideDrawer).toHaveStyle(sideDrawerClosedStyle);
     });
   });

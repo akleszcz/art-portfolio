@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 import App from './App';
-import { act, fireEvent, render, screen, within } from './utils/tests';
+import { fireEvent, render, screen, within } from './utils/tests';
 
 jest.mock('react-responsive', () => {
   return {
@@ -10,11 +10,13 @@ jest.mock('react-responsive', () => {
 
 describe('App component', () => {
   describe('on big screens', () => {
-    test(`navigates to the 'About' section when 'About' is clicked in the navigation bar`, () => {
+    test(`navigates to the 'About' section when 'About' is clicked in the navigation bar`, async () => {
+      const user = userEvent.setup();
       render(<App />);
+
       const primaryNav = screen.getByLabelText('Primary navigation');
 
-      userEvent.click(within(primaryNav).getByRole('link', { name: 'About', hidden: true }));
+      await user.click(within(primaryNav).getByRole('link', { name: 'About', hidden: true }));
 
       expect(within(screen.getByRole('main')).getByText('About')).toBeInTheDocument();
     });
