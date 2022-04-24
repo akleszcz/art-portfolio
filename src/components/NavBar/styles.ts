@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import ReactSelect from "react-select";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
@@ -24,20 +23,12 @@ export const Link = styled(NavLink)`
 export const MenuButton = styled.button`
   background-color: transparent;
   border: none;
+  color: ${({ theme }) => theme.colors.text};
 `;
-
-export const Select = styled(ReactSelect)`
-  text-transform: capitalize;
-  width: 8rem;
-
-  & > div {
-    border-style: none;
-    box-shadow: none;
-  }
-` as typeof ReactSelect;
 
 export const SelectContainer = styled.span`
   align-items: center;
+  background-color: transparent;
   display: flex;
   margin-left: auto;
 `;

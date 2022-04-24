@@ -31,7 +31,7 @@ describe('Layout component', () => {
 
   test('changes styles based on the selected theme', async () => {
     render(<Layout />);
-    const themeName: ThemeName = 'winter';
+    const themeName: ThemeName = 'dark';
     await selectEvent.select(screen.getByLabelText('Theme select'), themeName);
 
     expect(screen.getByTestId(CONTENT_TEST_ID))

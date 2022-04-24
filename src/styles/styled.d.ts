@@ -5,6 +5,8 @@ declare module 'styled-components' {
     colors: {
       background: string;
       secondaryText: string;
+      selectBackground: string;
+      selectActiveBackground: string;
       text: string;
     };
   }

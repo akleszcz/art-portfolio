@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { tokens } from "../../styles/tokens";
 
 export const Nav = styled.nav`
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.text};
   display: flex;
   flex-direction: column;
   height: 100%;
