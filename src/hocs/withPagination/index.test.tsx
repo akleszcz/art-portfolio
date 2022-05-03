@@ -94,16 +94,16 @@ describe('WithPagination component returned by withPagination HOC', () => {
 
   test('disables NavLink to the next page on the last page', async () => {
     const lastPageNumber = Math.ceil(TOTAL_COUNT / LIMIT);
+    window.history.pushState({}, '', `/mock-component?page=${lastPageNumber}`);
     const lastDataItem = 'lastDataItem';
-    render(wrapInTheme(<MockComponentWithPagination/>));
-    await screen.findByText('dataItem1');
-    const linkToNextPage = screen.getByLabelText('Next page');
     mockFetchData.mockResolvedValueOnce({ data: [lastDataItem], totalCount: TOTAL_COUNT });
+    render(wrapInTheme(<MockComponentWithPagination/>));
 
-    await selectEvent.select(screen.getByLabelText('Page select'), lastPageNumber);
-    await screen.findByText(lastDataItem);
+    await screen.findByText('lastDataItem');
+    const linkToNextPage = screen.getByLabelText('Next page');
 
     expect(linkToNextPage).toHaveStyle('pointer-events: none;');
     expect(linkToNextPage.classList.contains('disabled')).toBe(true);
+
   });
 });

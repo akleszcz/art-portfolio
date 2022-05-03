@@ -13,6 +13,7 @@ jest.mock('react-responsive', () => {
 describe('NavBar component', () => {
   describe('on big screens', () => {
     test('displays currently active NavLink with an underline and inactive ones without it', async () => {
+      const user = userEvent.setup();
       render(wrapInTheme(<NavBar/>));
       const HomeLink = screen.getByRole('link', { name: 'Home' });
       const PortfolioLink = screen.getByRole('link', { name: 'Portfolio' });
@@ -26,7 +27,7 @@ describe('NavBar component', () => {
       expect(AboutLink).toHaveStyle(noUnderlineStyle);
       expect(ContactLink).toHaveStyle(noUnderlineStyle);
 
-      userEvent.click(AboutLink);
+      await user.click(AboutLink);
 
       expect(HomeLink).toHaveStyle(noUnderlineStyle);
       expect(PortfolioLink).toHaveStyle(noUnderlineStyle);

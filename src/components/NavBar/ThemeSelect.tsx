@@ -9,7 +9,6 @@ import { ThemeName, ThemeOptionType } from "../../styles/types";
 import { createSelectOption } from "../../utils";
 import * as Styled from "./styles";
 
-
 const themeOptions = Object.keys(themes).map((key) => createSelectOption(key)) as ThemeOptionType[];
 
 const ThemeSelect: FunctionComponent = () => {
